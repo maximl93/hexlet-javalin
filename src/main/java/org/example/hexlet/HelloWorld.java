@@ -11,6 +11,14 @@ public class HelloWorld {
         // Описываем, что загрузится по адресу /
         app.get("/users", ctx -> ctx.result("GET /users"));
         app.post("/users", ctx -> ctx.result("POST /users"));
+
+        app.get("/hello", context -> {
+            String name = context.queryParamAsClass("name", String.class).getOrDefault("World");
+
+            context.result("Hello, " + name + "!");
+
+        });
+
         app.start(7070); // Стартуем веб-сервер
     }
 }
