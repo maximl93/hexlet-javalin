@@ -19,6 +19,13 @@ public class HelloWorld {
 
         });
 
+        app.get("/users/{id}/posts/{postId}", context -> {
+           Long id = context.pathParamAsClass("id", Long.class).get();
+           Long postId = context.pathParamAsClass("postId", Long.class).get();
+
+           context.result("User id: " + id + ", post id: " + postId);
+        });
+
         app.start(7070); // Стартуем веб-сервер
     }
 }
