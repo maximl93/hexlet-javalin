@@ -1,0 +1,1 @@
+@template.layout.pageForPracticing(content = @`<h1>Main page</h1>`, footer = @`<h2>Footer of main page</h2>`)
